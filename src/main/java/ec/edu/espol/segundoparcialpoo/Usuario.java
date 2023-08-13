@@ -36,7 +36,8 @@ public class Usuario {
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
             usuarios = (ArrayList<Usuario>) ois.readObject();
-        } catch (IOException | ClassNotFoundException h){}
+        } catch (IOException e){} 
+        catch (ClassNotFoundException h){}
         return usuarios;
     }
     
