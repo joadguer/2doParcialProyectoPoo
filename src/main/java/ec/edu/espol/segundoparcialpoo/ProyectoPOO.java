@@ -5,7 +5,9 @@
 package ec.edu.espol.proyectopoo;
 
 
+import ec.edu.espol.segundoparcialpoo.Usuario;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,7 +18,7 @@ import java.util.Scanner;
 public class ProyectoPOO {
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        
+        /*
         Scanner sc = new Scanner(System.in);
         
         StringBuilder sb = new StringBuilder();
@@ -99,6 +101,15 @@ public class ProyectoPOO {
         } while (opcion != 3);
         
         System.out.println("Gracias por usar nuestro servicio");
+*/
+        //Lista de usuarios
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        Usuario usuario1 = new Usuario("Josue","123");
+        Usuario usuario2 = new Usuario("Ricardo","456");
+        usuarios.add(usuario1);
+        usuarios.add(usuario2);
+        Usuario.saveListToFileSer("usuarios.ser", usuarios);
+        
     }
 }
 
