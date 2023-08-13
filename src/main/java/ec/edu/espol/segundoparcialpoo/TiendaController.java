@@ -6,7 +6,12 @@ package ec.edu.espol.segundoparcialpoo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -15,12 +20,26 @@ import javafx.fxml.Initializable;
  */
 public class TiendaController implements Initializable {
 
+    @FXML
+    private TextField Usuario;
+    @FXML
+    private PasswordField clave;
+    @FXML
+    private ImageView imgUser;
+    @FXML
+    private ImageView ImgPass;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        
     }    
+
+    @FXML
+    private void iniciosesion(MouseEvent event) {
+    }
     
 }

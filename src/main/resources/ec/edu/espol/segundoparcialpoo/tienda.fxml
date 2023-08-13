@@ -50,7 +50,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" text="Iniciar Sesion" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onMouseClicked="#iniciosesion" text="Iniciar Sesion" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <PasswordField fx:id="clave" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
