@@ -4,7 +4,7 @@
  */
 package ec.edu.espol.segundoparcialpoo;
 
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -24,7 +24,7 @@ import javafx.scene.input.MouseEvent;
 public class TiendaController implements Initializable {
 
     @FXML
-    private TextField Usuario;
+    private TextField username;
     @FXML
     private PasswordField clave;
     @FXML
@@ -37,38 +37,35 @@ public class TiendaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-    }    
+
+    }
 
     @FXML
     private void iniciosesion(MouseEvent event) {
         try {
-        String username = Usuario.getText();
-        String password = clave.getText();
-            
-        ArrayList<Usuario>  usuarios = Usuario.readListFromFileSer("usuarios.ser");
-        Boolean verdadero = true;
-        for(Usuario user: usuarios){
-           
-                if(user.getNombreUsuario().equals(username) && user.getContraseña().equals(password) ){
-                            Alert a = new Alert(Alert.AlertType.INFORMATION, "Usuario correcto");
-                            a.show();
-                            verdadero = false;
+            String username1 = username.getText();
+            String password = clave.getText();
+
+            ArrayList<Usuario> usuarios = Usuario.readListFromFileSer("usuarios.ser");
+            Boolean verdadero = true;
+            for (Usuario user : usuarios) {
+
+                if (user.getNombreUsuario().equals(username) && user.getContraseña().equals(password)) {
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Usuario correcto");
+                    a.show();
+                    verdadero = false;
                 }
             }
-        if(verdadero){
-            Alert a = new Alert(Alert.AlertType.ERROR, "Usuario Incorrecto");
-            a.show();
-        }
-        
-        }catch(Exception e){
+            if (verdadero) {
+                Alert a = new Alert(Alert.AlertType.ERROR, "Usuario Incorrecto");
+                a.show();
+            }
+
+        } catch (Exception e) {
             e.printStackTrace();
-            
+
         }
-        
-                
-                
+
     }
-    
+
 }
