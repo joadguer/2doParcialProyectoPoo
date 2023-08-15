@@ -47,16 +47,15 @@ public class TiendaController implements Initializable {
             String password = clave.getText();
 
             ArrayList<Usuario> usuarios = Usuario.readListFromFileSer("usuarios.ser");
-            Boolean verdadero = true;
+          Boolean verdadero = true;
             for (Usuario user : usuarios) {
-
-                if (user.getNombreUsuario().equals(username) && user.getContraseña().equals(password)) {
+                if (user.getNombreUsuario().equals(username1) && user.getContraseña().equals(password)) {
                     Alert a = new Alert(Alert.AlertType.INFORMATION, "Usuario correcto");
                     a.show();
                     verdadero = false;
                 }
             }
-            if (verdadero) {
+           if (verdadero) {
                 Alert a = new Alert(Alert.AlertType.ERROR, "Usuario Incorrecto");
                 a.show();
             }

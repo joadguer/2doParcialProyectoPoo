@@ -9,13 +9,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author JOSUE
  */
-public class Usuario {
+public class Usuario implements Serializable{
    private String nombreUsuario;
    private String contraseña;
 
@@ -36,10 +37,17 @@ public class Usuario {
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
             usuarios = (ArrayList<Usuario>) ois.readObject();
-        } catch (IOException e){} 
-        catch (ClassNotFoundException h){}
+        } catch (IOException e){
+            e.printStackTrace();
+        } 
+        catch (ClassNotFoundException h){
+            h.printStackTrace();
+        }
         return usuarios;
     }
+     
+     
+     
 
     public String getNombreUsuario() {
         return nombreUsuario;
